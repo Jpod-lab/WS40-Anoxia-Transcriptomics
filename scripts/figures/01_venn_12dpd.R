@@ -1,0 +1,6 @@
+#!/usr/bin/env Rscript
+suppressPackageStartupMessages({library(readxl);library(VennDiagram);library(grid)})
+repo<-normalizePath(Sys.getenv('WS40_REPO',unset='.')); inp<-file.path(repo,'data/input/historical_threshold'); out<-file.path(repo,'results/reproduced/figures/venn');dir.create(out,recursive=TRUE,showWarnings=FALSE)
+labels<-c(SA='4hA',LA='24hA',SR='2hR',LR='24hR')
+read_sets<-function(direction) setNames(lapply(names(labels),function(code){x<-read.csv(file.path(inp,paste0('12dpd_',code,'_t0_res_sig_fullset.csv')),row.names=1);if(direction=='Up')rownames(x)[!is.na(x$padj)&x$padj<.05&x$log2FoldChange>.5] else rownames(x)[!is.na(x$padj)&x$padj<.05&x$log2FoldChange < -0.5]}),unname(labels))
+for(direction in c('Up','Down')){sets<-read_sets(direction); cols<-c('#D55E00','#E69F00','#009E73','#0072B2');png(file.path(out,paste0(tolower(direction),'_venn_12dpd.png')),width=8,height=8,units='in',res=600);grid.draw(venn.diagram(sets,NULL,fill=cols,alpha=.5,cex=1.5,cat.cex=1.3,category.names=names(sets),main=paste('12-dpd',tolower(direction),'regulated transcripts')));dev.off();pdf(file.path(out,paste0(tolower(direction),'_venn_12dpd.pdf')),8,8);grid.draw(venn.diagram(sets,NULL,fill=cols,alpha=.5,cex=1.5,cat.cex=1.3,category.names=names(sets),main=paste('12-dpd',tolower(direction),'regulated transcripts')));dev.off()}

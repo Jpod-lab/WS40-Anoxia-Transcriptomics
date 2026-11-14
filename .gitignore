@@ -1,0 +1,40 @@
+.DS_Store
+.Rhistory
+.RData
+.Rproj.user/
+*.bam
+*.fastq
+*.fastq.gz
+*.rds
+*.RData
+*.log
+results/reproduced/*
+!results/reproduced/.gitkeep
+# Keep staged source workbooks private until PI approves redistribution
+results/historical/*.xlsx
+validation/SHA256SUMS.local.txt
+
+# Research inputs and generated results
+data/
+results/historical/*.xlsx
+results/reproduced/
+*.RData
+*.rds
+*.bam
+*.fastq.gz
+.Rhistory
+
+# Historical and exploratory analysis scripts
+scripts/historical_source/
+scripts/01_deseq2_validation.R
+scripts/02_ortholog_venn_validation.R
+scripts/04_go_bioc321_validated.R
+scripts/04_go_kegg_recovered.R
+scripts/05_collectri_validated_no_batch.R
+scripts/run_both.sh
+# Local-only source figure scripts and obsolete plotting alternatives
+scripts/figures/*_manuscript.R
+scripts/figures/03_go_figures.R
+scripts/figures/04_kegg_figures.R
+scripts/stage_local_inputs.sh
+validation/figure_comparison/
