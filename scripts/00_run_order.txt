@@ -1,5 +1,19 @@
-01_deseq2_validation.R (original validation bundle inputs)
-02_ortholog_venn_validation.R (historical workbook and Orthofinder inputs)
-04_go_kegg_recovered.R (Bioconductor 3.21, requires clean-run validation)
-05_collectri_validated_no_batch.R (requires clean-run validation)
-validate_go_complete.R (historical S7/S9 and Bioc 3.21 CSVs)
+WS40 manuscript reproducibility - recommended execution order
+
+01_deseq2_portable.R
+02_ortholog_venn_portable.R
+04_go_bioc321_portable.R (Bioconductor 3.21)
+05_collectri_portable.R
+
+Validation:
+validate_go_complete.R
+validate_go_tables.R
+
+Manuscript figures:
+figures/01_venn_12dpd.R
+figures/02_pca_12dpd.R
+figures/03_combined_go_kegg_portable.R
+figures/04_volcano_portable.R
+figures/05_collectri_figures.R
+
+Required historical input datasets are excluded from Git and must be staged separately.
