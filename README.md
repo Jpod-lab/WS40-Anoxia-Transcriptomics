@@ -1,4 +1,5 @@
 # WS40 12-dpd manuscript reproducibility
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24267894.svg)](https://doi.org/10.5281/zenodo.24267894)
 
 **Status: repository staging package, not yet a complete executable reproduction.** This repository is intended to preserve the manuscript-era results and independently rerun them. Do not replace archived supplemental tables with modern annotation outputs.
 
