@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite this archived release."
+title: "WS40 Manuscript Reproducibility"
+type: software
+authors:
+ - family-names: Clouser
+ given-names: Patrick R.
+version: 1.0.1
+date-released: 2026-11-16
+doi: 10.5281/zenodo.24267894
+url: https://github.com/Jpod-lab/WS40-Anoxia-Transcriptomics
+license: MIT
